@@ -19,7 +19,7 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: vite build
+        run: npx vite build
 
       - name: Deploy to Vercel
         run: npx vercel --token ${VERCEL_TOKEN} --prod
