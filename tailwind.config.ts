@@ -47,6 +47,9 @@ const config: Config = {
 				card: {
 					DEFAULT: 'hsl(var(--card) / <alpha-value>)',
 					foreground: 'hsl(var(--card-foreground) / <alpha-value>)'
+				},
+				carousel: {
+					DEFAULT: '#f8f8fb'
 				}
 			},
 			borderRadius: {
