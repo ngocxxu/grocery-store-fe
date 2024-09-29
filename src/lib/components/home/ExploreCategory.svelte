@@ -30,7 +30,7 @@
 			opts={{
 				align: 'start'
 			}}
-			class="w-full "
+			class="w-full"
 		>
 			<Carousel.Content>
 				{#each [...categoryData, ...categoryData] as item, i (i)}
@@ -45,7 +45,7 @@
 								<div class="flex flex-col items-center">
 									<img class="h-12 w-12" src={item.url} alt={`Category ${i + 1}`} />
 									<h3 class="font-medium">{item.category}</h3>
-									<p class="text-xs">{item.amount} items</p>
+									<p class="text-xs font-extralight">{item.amount} items</p>
 								</div>
 							</Card.Content>
 						</Card.Root>
