@@ -35,7 +35,7 @@
 					<div class="container">
 						<Card.Content class="flex items-center justify-center p-0">
 							<div class="flex w-1/2 flex-col gap-4">
-								<p class="text-gray-400">Flat 30% Off</p>
+								<p class="text-gray-400">Flat 50% Off</p>
 								<h1 class="text-5xl font-semibold leading-normal">
 									Explore <span class="text-secondary">{item.highlightText}</span>
 									<br />
