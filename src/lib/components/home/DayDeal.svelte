@@ -1,13 +1,10 @@
 <script lang="ts">
 	import ProductCard from '../common/ProductCard.svelte';
-	import * as Card from '$lib/components/ui/card/index.js';
 	import * as Carousel from '$lib/components/ui/carousel/index.js';
-	import { cn } from '$lib/utils';
-	import StarRating from '../common/StarRating.svelte';
 </script>
 
 <div class="container">
-	<div class="flex items-center justify-between mb-8">
+	<div class="mb-8 flex items-center justify-between">
 		<div>
 			<h3 class="text-3xl font-medium">Day Of The <span class="text-secondary">Deal</span></h3>
 			<p class="font-extralight">Don't wait. The time will never be just right.</p>

@@ -1,14 +1,16 @@
 <script lang="ts">
 	import * as Tabs from '$lib/components/ui/tabs';
+	import ProductCard from '../common/ProductCard.svelte';
 
 	const tabData = [
 		{
 			label: 'All',
-			value: 'all'
+			value: 'all',
+			data: Array(5)
 		},
-		{ label: 'Snack & Spices', value: 'snacks' },
-		{ label: 'Fruits', value: 'fruits' },
-		{ label: 'Vegetables', value: 'vegetables' }
+		{ label: 'Snack & Spices', value: 'snacks', data: Array(2) },
+		{ label: 'Fruits', value: 'fruits', data: Array(3) },
+		{ label: 'Vegetables', value: 'vegetables', data: Array(8) }
 	];
 </script>
 
@@ -31,8 +33,14 @@
 			{/each}
 		</Tabs.List>
 
-		{#each tabData as item (item.value)}
-			<Tabs.Content value={item.value}>{item.label}</Tabs.Content>
+		{#each tabData as item2 (item2.value)}
+			<Tabs.Content value={item2.value}>
+				<div class="grid grid-cols-4 gap-4">
+					{#each item2.data as _, i (i)}
+						<ProductCard />
+					{/each}
+				</div>
+			</Tabs.Content>
 		{/each}
 	</Tabs.Root>
 </div>
