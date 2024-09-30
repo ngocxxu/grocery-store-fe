@@ -5,6 +5,8 @@
 	import HomeBanner from '$lib/components/home/HomeBanner.svelte';
 	import NewArrivals from '$lib/components/home/NewArrivals.svelte';
 	import PosterFood from '$lib/components/home/PosterFood.svelte';
+	import ServiceStore from '$lib/components/home/ServiceStore.svelte';
+	import TopVendor from '$lib/components/home/TopVendor.svelte';
 </script>
 
 <div class="flex flex-col gap-24">
@@ -14,4 +16,6 @@
 	<PosterFood />
 	<HomeBanner />
 	<NewArrivals />
+	<ServiceStore />
+	<TopVendor />
 </div>

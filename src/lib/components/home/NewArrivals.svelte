@@ -17,7 +17,7 @@
 <div class="container relative mb-8">
 	<div class="absolute -top-6">
 		<h3 class="text-3xl font-medium">New <span class="text-secondary">Arrivals</span></h3>
-		<p class="font-extralight">Shop online for new arrivals and get free shipping!</p>
+		<p class="text-sm font-light">Shop online for new arrivals and get free shipping!</p>
 	</div>
 
 	<Tabs.Root value={tabData[0].value}>
