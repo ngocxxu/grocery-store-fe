@@ -36,6 +36,6 @@
 	}
 	.filled {
 		fill: #fea99a;
-    stroke: none;
+		stroke: #fea99a;
 	}
 </style>
