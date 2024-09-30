@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Star from '$lib/components/common/Star.svelte';
+	import { stars } from '$lib/data';
 
 	// User rating states
 	let rating: number | null = null;
@@ -11,14 +12,6 @@
 	const handleRate = (id: number) => {
 		rating = id;
 	};
-
-	let stars = [
-		{ id: 1, title: 'One Star' },
-		{ id: 2, title: 'Two Stars' },
-		{ id: 3, title: 'Three Stars' },
-		{ id: 4, title: 'Four Stars' },
-		{ id: 5, title: 'Five Stars' }
-	];
 </script>
 
 <div class="relative">

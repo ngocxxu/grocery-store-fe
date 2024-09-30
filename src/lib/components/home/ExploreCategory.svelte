@@ -1,22 +1,11 @@
 <script lang="ts">
 	import * as Card from '$lib/components/ui/card/index.js';
 	import * as Carousel from '$lib/components/ui/carousel/index.js';
+	import { categoryData } from '$lib/data';
 	import { cn } from '$lib/utils';
 	import Autoplay from 'embla-carousel-autoplay';
 
 	const plugin = Autoplay({ delay: 2000, stopOnInteraction: true });
-
-	const categoryData = [
-		{
-			color: 'bg-green-200',
-			category: 'Fruits',
-			amount: 222,
-			url: '/svg/category/1.svg'
-		},
-		{ color: 'bg-purple-200', category: 'Cold Drinks', amount: 22, url: '/svg/category/2.svg' },
-		{ color: 'bg-yellow-200', category: 'Bakery', amount: 22, url: '/svg/category/3.svg' },
-		{ color: 'bg-red-200', category: 'Vegetables', amount: 22, url: '/svg/category/4.svg' }
-	];
 </script>
 
 <div class="container flex justify-center gap-4">

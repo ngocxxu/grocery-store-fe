@@ -5,25 +5,7 @@
 	import Button from '../ui/button/button.svelte';
 	import Input from '../ui/input/input.svelte';
 	import { goto } from '$app/navigation';
-
-	const headerMenu = [
-		{
-			name: 'Home',
-			href: '/'
-		},
-		{
-			name: 'Category',
-			href: '/category'
-		},
-		{
-			name: 'About us',
-			href: '/about'
-		},
-		{
-			name: 'Contact us',
-			href: '/contact'
-		}
-	];
+	import { headerMenu } from '$lib/data';
 </script>
 
 <div class="container flex items-center justify-between py-4">

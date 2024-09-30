@@ -1,17 +1,7 @@
 <script lang="ts">
 	import * as Tabs from '$lib/components/ui/tabs';
+	import { tabData } from '$lib/data';
 	import ProductCard from '../common/ProductCard.svelte';
-
-	const tabData = [
-		{
-			label: 'All',
-			value: 'all',
-			data: Array(5)
-		},
-		{ label: 'Snack & Spices', value: 'snacks', data: Array(2) },
-		{ label: 'Fruits', value: 'fruits', data: Array(3) },
-		{ label: 'Vegetables', value: 'vegetables', data: Array(8) }
-	];
 </script>
 
 <div class="container relative mb-8">
@@ -21,7 +11,7 @@
 	</div>
 
 	<Tabs.Root value={tabData[0].value}>
-		<Tabs.List class="flex justify-end bg-transparent mb-6">
+		<Tabs.List class="mb-6 flex justify-end bg-transparent">
 			{#each tabData as item, i (item.value)}
 				<Tabs.Trigger
 					class="text-lg data-[state=active]:text-secondary data-[state=active]:shadow-none"

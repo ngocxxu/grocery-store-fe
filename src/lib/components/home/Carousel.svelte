@@ -3,23 +3,9 @@
 	import * as Card from '$lib/components/ui/card/index.js';
 	import * as Carousel from '$lib/components/ui/carousel/index.js';
 	import Button from '../ui/button/button.svelte';
+	import { carouselData } from '$lib/data';
 
 	const plugin = Autoplay({ delay: 4000, stopOnInteraction: true });
-
-	const carouselData = [
-		{
-			highlightText: 'Healthy',
-			lastText: '& Fresh Fruits'
-		},
-		{
-			highlightText: 'Warm',
-			lastText: 'Fast Food & Snacks'
-		},
-		{
-			highlightText: 'Organic',
-			lastText: '& Fresh Vegetable'
-		}
-	];
 </script>
 
 <Carousel.Root
