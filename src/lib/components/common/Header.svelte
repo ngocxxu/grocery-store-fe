@@ -93,7 +93,7 @@
 			<LayoutGrid />
 		</Button>
 		<div class="p-4">
-			{#each headerMenu as item, i (i)}
+			{#each headerMenu as item (item.name)}
 				<a class="p-5 font-medium hover:text-secondary" href={item.href}>{item.name}</a>
 			{/each}
 		</div>

@@ -29,7 +29,7 @@
 	on:mouseleave={plugin.reset}
 >
 	<Carousel.Content>
-		{#each carouselData as item, i (i)}
+		{#each carouselData as item, i (item.highlightText)}
 			<Carousel.Item>
 				<Card.Root class="border-none bg-carousel">
 					<div class="container">

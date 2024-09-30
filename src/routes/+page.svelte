@@ -2,6 +2,8 @@
 	import Carousel from '$lib/components/home/Carousel.svelte';
 	import DayDeal from '$lib/components/home/DayDeal.svelte';
 	import ExploreCategory from '$lib/components/home/ExploreCategory.svelte';
+	import HomeBanner from '$lib/components/home/HomeBanner.svelte';
+	import NewArrivals from '$lib/components/home/NewArrivals.svelte';
 	import PosterFood from '$lib/components/home/PosterFood.svelte';
 </script>
 
@@ -9,5 +11,7 @@
 	<Carousel />
 	<ExploreCategory />
 	<DayDeal />
-	<PosterFood/>
+	<PosterFood />
+	<HomeBanner />
+	<NewArrivals />
 </div>

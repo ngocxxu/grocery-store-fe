@@ -13,7 +13,7 @@
 			<div class="flex items-center justify-between">
 				<p class="text-sm font-extralight">Chocos</p>
 				<div class="flex gap-1">
-					{#each Array(5) as _}
+					{#each Array(5) as _, i (i)}
 						<Star filled={true} starId={3} />
 					{/each}
 				</div>
