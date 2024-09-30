@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { cn } from '$lib/utils';
+
 	const vendorData = [
 		{
 			name: 'Mira Fashion Pvt. Ltd.',
@@ -73,6 +75,8 @@
 			]
 		}
 	];
+
+	let vendorId = 1;
 </script>
 
 <div class="container">
@@ -85,16 +89,27 @@
 
 	<div class="flex items-center justify-center gap-6">
 		<div class="w-[40%]">
-			<img class="rounded-3xl" src={`/img/vendor/img-${1 + 1}.jpg`} alt={`Vendor ${1 + 1}`} />
+			<img class="rounded-3xl" src={`/img/vendor/img-${vendorId}.jpg`} alt={`Vendor ${vendorId}`} />
 		</div>
 
 		<div class="flex w-[60%] flex-col gap-6">
-			{#each vendorData as item (item.name)}
+			{#each vendorData as item, i (item.name)}
 				<button
-					class="flex items-start justify-between rounded-3xl border border-secondary bg-carousel p-6"
+					class={cn(
+						'flex items-start justify-between rounded-3xl border  bg-carousel p-6',
+						i + 1 === vendorId && 'border-secondary'
+					)}
+					on:click={() => (vendorId = i + 1)}
 				>
 					<div>
-						<h5 class="mb-2 text-left text-lg font-medium text-secondary">{item.name}</h5>
+						<h5
+							class={cn(
+								'mb-2 text-left text-lg font-medium',
+								i + 1 === vendorId && 'text-secondary'
+							)}
+						>
+							{item.name}
+						</h5>
 						<div class="text-sm font-light">
 							{#each item.categories as item2}
 								<span>{item2.name} ({item2.amount})</span> |

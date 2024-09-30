@@ -21,7 +21,7 @@
 	</div>
 
 	<Tabs.Root value={tabData[0].value}>
-		<Tabs.List class="flex justify-end bg-transparent">
+		<Tabs.List class="flex justify-end bg-transparent mb-6">
 			{#each tabData as item, i (item.value)}
 				<Tabs.Trigger
 					class="text-lg data-[state=active]:text-secondary data-[state=active]:shadow-none"
