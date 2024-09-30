@@ -10,8 +10,6 @@
 		{ label: 'Fruits', value: 'fruits' },
 		{ label: 'Vegetables', value: 'vegetables' }
 	];
-
-	let currentTab = tabData[0].value;
 </script>
 
 <div class="container relative mb-8">
@@ -20,7 +18,7 @@
 		<p class="font-extralight">Shop online for new arrivals and get free shipping!</p>
 	</div>
 
-	<Tabs.Root value={currentTab}>
+	<Tabs.Root value={tabData[0].value}>
 		<Tabs.List class="flex justify-end bg-transparent">
 			{#each tabData as item, i (item.value)}
 				<Tabs.Trigger
