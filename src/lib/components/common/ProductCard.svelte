@@ -22,19 +22,35 @@
 		status: 'In stock',
 		discount: 30
 	};
+
+	let isVisible = false;
 </script>
 
 <Card.Root class="rounded-2xl">
 	<Card.Content class="relative p-0">
-		<img class="rounded-2xl" src={`/img/product/${0 + 1}.jpg`} alt={`Product ${0 + 1}`} />
-		<div class="absolute bottom-3 right-1/2 translate-x-1/2">
-			<div class="flex items-center gap-3">
-				{#each actionsProduct as item}
-					<Button class="h-9 w-9 rounded-xl p-0" title={item.name} variant="outline-3" size="icon">
-						<svelte:component this={item.icon} class="h-5 w-5" />
-					</Button>
-				{/each}
-			</div>
+		<div
+			on:mouseenter={() => (isVisible = true)}
+			on:mouseleave={() => (isVisible = false)}
+			role="button"
+			tabindex="0"
+		>
+			<img class="rounded-2xl" src={`/img/product/${0 + 1}.jpg`} alt={`Product ${0 + 1}`} />
+			{#if isVisible}
+				<div class="absolute bottom-3 right-1/2 translate-x-1/2">
+					<div class="flex items-center gap-3">
+						{#each actionsProduct as item}
+							<Button
+								class="h-9 w-9 rounded-xl p-0"
+								title={item.name}
+								variant="outline-3"
+								size="icon"
+							>
+								<svelte:component this={item.icon} class="h-5 w-5" />
+							</Button>
+						{/each}
+					</div>
+				</div>
+			{/if}
 		</div>
 	</Card.Content>
 
