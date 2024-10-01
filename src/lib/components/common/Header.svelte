@@ -1,11 +1,12 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import * as HoverCard from '$lib/components/ui/hover-card/index.js';
 	import * as Sheet from '$lib/components/ui/sheet';
-	import { LayoutGrid, UserRound, Star, ShoppingCart } from 'lucide-svelte';
+	import { headerMenu } from '$lib/data';
+	import { LayoutGrid, ShoppingCart, Star, UserRound } from 'lucide-svelte';
+
 	import Button from '../ui/button/button.svelte';
 	import Input from '../ui/input/input.svelte';
-	import { goto } from '$app/navigation';
-	import { headerMenu } from '$lib/data';
 </script>
 
 <div class="container flex items-center justify-between py-4">
@@ -59,7 +60,7 @@
 			>
 			<Sheet.Content>
 				<Sheet.Header>
-					<Sheet.Title>Are you sure absolutely sure?</Sheet.Title>
+					<Sheet.Title>My cart</Sheet.Title>
 					<Sheet.Description>
 						This action cannot be undone. This will permanently delete your account and remove your
 						data from our servers.

@@ -13,7 +13,16 @@
 		price: 52,
 		rating: 4,
 		image: [],
-		unit: 'Pack',
+		weightOptions: [
+			{
+				weight: 500,
+				unit: 'g'
+			},
+			{
+				weight: 1,
+				unit: 'kg'
+			}
+		],
 		type: 'Snacks',
 		quantity: 100,
 		description:
@@ -82,7 +91,9 @@
 						>${calDiscount(product.price, product.discount)}</span
 					>
 				</p>
-				<p class="text-sm font-light">1 {product.unit}</p>
+				<p class="text-sm font-light">
+					{product.weightOptions[0].weight + product.weightOptions[0].unit}
+				</p>
 			</div>
 		</div>
 	</Card.Footer>

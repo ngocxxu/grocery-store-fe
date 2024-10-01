@@ -4,7 +4,7 @@ export type TProductProps = {
 	price: number;
 	rating: number;
 	image: string[];
-	unit: string;
+	weightOptions: { weight: number; unit: string }[];
 	type: string;
 	quantity: number;
 	description: string;
