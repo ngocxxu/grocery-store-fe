@@ -1,36 +1,10 @@
 <script lang="ts">
 	import Star from '$lib/components/common/Star.svelte';
 	import * as Card from '$lib/components/ui/card';
-	import { actionsProduct } from '$lib/data';
+	import { actionsProduct, product } from '$lib/data';
 	import { calDiscount, createBoolArray } from '$lib/utils';
 
-	import type { TProductProps } from '../../../types';
 	import Button from '../ui/button/button.svelte';
-
-	export const product: TProductProps = {
-		id: 1,
-		name: 'Ground Nuts Oil Pack 52g',
-		price: 52,
-		rating: 4,
-		image: [],
-		weightOptions: [
-			{
-				weight: 500,
-				unit: 'g'
-			},
-			{
-				weight: 1,
-				unit: 'kg'
-			}
-		],
-		type: 'Snacks',
-		quantity: 100,
-		description:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, voluptatum. Vitae dolores alias repellat eligendi, officiis, exercitationem corporis quisquam delectus cum non',
-		sku: 'WH12',
-		status: 'Sale',
-		discount: 30
-	};
 
 	let isVisible = false;
 </script>
@@ -86,10 +60,8 @@
 			<p class="text-sm">{product.name}</p>
 			<div class="flex justify-between">
 				<p class="font-semibold">
-					${product.price}
-					<span class="ml-1.5 text-sm font-light line-through"
-						>${calDiscount(product.price, product.discount)}</span
-					>
+					${calDiscount(product.price, product.discount)}
+					<span class="ml-1.5 text-sm font-light line-through">${product.price}</span>
 				</p>
 				<p class="text-sm font-light">
 					{product.weightOptions[0].weight + product.weightOptions[0].unit}

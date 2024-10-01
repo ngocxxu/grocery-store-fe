@@ -2,8 +2,9 @@
 	import { goto } from '$app/navigation';
 	import * as HoverCard from '$lib/components/ui/hover-card/index.js';
 	import * as Sheet from '$lib/components/ui/sheet';
-	import { headerMenu } from '$lib/data';
-	import { LayoutGrid, ShoppingCart, Star, UserRound } from 'lucide-svelte';
+	import { headerMenu, product } from '$lib/data';
+	import { calDiscount } from '$lib/utils';
+	import { LayoutGrid, ShoppingCart, Star, UserRound, X } from 'lucide-svelte';
 
 	import Button from '../ui/button/button.svelte';
 	import Input from '../ui/input/input.svelte';
@@ -61,9 +62,31 @@
 			<Sheet.Content>
 				<Sheet.Header>
 					<Sheet.Title>My cart</Sheet.Title>
-					<Sheet.Description>
-						This action cannot be undone. This will permanently delete your account and remove your
-						data from our servers.
+					<Sheet.Description class="relative">
+						<div class="flex items-center gap-4 rounded-2xl border bg-carousel p-4">
+							<img
+								class="w-20 rounded-2xl border"
+								src={`/img/product/${0 + 1}.jpg`}
+								alt={`Product ${0 + 1}`}
+							/>
+							<div>
+								<p>{product.name}</p>
+								<p class="font-semibold">
+									${calDiscount(product.price, product.discount)}
+									<span class="text-sm font-light"
+										>x {product.weightOptions[0].weight + product.weightOptions[0].unit}</span
+									>
+								</p>
+							</div>
+						</div>
+
+						<Button
+							variant="outline-3"
+							size="icon"
+							class="absolute -right-2 -top-2 h-5 w-5 rounded-full p-0"
+						>
+							<X class="h-3 w-3" />
+						</Button>
 					</Sheet.Description>
 				</Sheet.Header>
 			</Sheet.Content>

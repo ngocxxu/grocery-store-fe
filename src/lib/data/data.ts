@@ -1,4 +1,5 @@
 import { Eye, GitCompareArrows, Heart, ShoppingBag } from 'lucide-svelte';
+import type { TProductProps } from '../../types';
 
 export const stars = [
 	{ id: 1, title: 'One Star' },
@@ -171,3 +172,28 @@ export const actionsProduct = [
 		icon: ShoppingBag,
 	}
 ];
+
+export const product: TProductProps = {
+	id: 1,
+	name: 'Ground Nuts Oil Pack 52g',
+	price: 52,
+	rating: 4,
+	image: [],
+	weightOptions: [
+		{
+			weight: 500,
+			unit: 'g'
+		},
+		{
+			weight: 1,
+			unit: 'kg'
+		}
+	],
+	type: 'Snacks',
+	quantity: 100,
+	description:
+		'Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, voluptatum. Vitae dolores alias repellat eligendi, officiis, exercitationem corporis quisquam delectus cum non',
+	sku: 'WH12',
+	status: 'Sale',
+	discount: 30
+};
