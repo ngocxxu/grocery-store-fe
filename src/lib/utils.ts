@@ -60,3 +60,8 @@ export function createBoolArray(trueCount: number, totalCount = 5): boolean[] {
 		.fill(false)
 		.map((_, index) => index < trueCount);
 }
+
+export const calDiscount = (price: number, discount: number) => {
+	const discountPrice = price - (price * discount) / 100;
+	return discountPrice.toFixed(2);
+};

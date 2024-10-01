@@ -1,7 +1,7 @@
 <script lang="ts">
 	export let title = 'star';
 	export let filled = false;
-	export let starId;
+	export let starId = 1;
 	export let width = 16;
 	export let height = 16;
 </script>
