@@ -8,6 +8,7 @@
 
 	import Button from '../ui/button/button.svelte';
 	import Input from '../ui/input/input.svelte';
+	import Separator from '../ui/separator/separator.svelte';
 </script>
 
 <div class="container flex items-center justify-between py-4">
@@ -59,9 +60,9 @@
 					</div>
 				</button></Sheet.Trigger
 			>
-			<Sheet.Content>
+			<Sheet.Content class="flex flex-col justify-between">
 				<Sheet.Header>
-					<Sheet.Title>My cart</Sheet.Title>
+					<Sheet.Title class="mb-2">My cart</Sheet.Title>
 					<Sheet.Description class="relative">
 						<div class="flex items-center gap-4 rounded-2xl border bg-carousel p-4">
 							<img
@@ -83,12 +84,38 @@
 						<Button
 							variant="outline-3"
 							size="icon"
-							class="absolute -right-2 -top-2 h-5 w-5 rounded-full p-0"
+							class="absolute -right-2 -top-2 h-5 w-5 rounded-full bg-primary p-0"
 						>
-							<X class="h-3 w-3" />
+							<X class="h-3 w-3" color="white" />
 						</Button>
 					</Sheet.Description>
 				</Sheet.Header>
+
+				<div class="border-t">
+					<div class="flex flex-col gap-2 my-4">
+						<div class="flex items-center justify-between">
+							<p class="font-medium text-gray-500">Sub-Total :</p>
+							<p>$300.00</p>
+						</div>
+						<div class="flex items-center justify-between">
+							<p class="font-medium text-gray-500">VAT (20%) :</p>
+							<p>$60.00</p>
+						</div>
+						<div class="flex items-center justify-between">
+							<p class="font-medium text-gray-500">Total :</p>
+							<p>$360.00</p>
+						</div>
+					</div>
+
+					<Sheet.Footer>
+						<Sheet.Close asChild let:builder>
+							<div class="flex w-full items-center justify-between">
+								<Button variant="outline">View Cart</Button>
+								<Button builders={[builder]} type="submit">Checkout</Button>
+							</div>
+						</Sheet.Close>
+					</Sheet.Footer>
+				</div>
 			</Sheet.Content>
 		</Sheet.Root>
 	</div>
