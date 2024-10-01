@@ -1,8 +1,11 @@
 <script lang="ts">
-	import * as Card from '$lib/components/ui/card';
 	import Star from '$lib/components/common/Star.svelte';
+	import * as Card from '$lib/components/ui/card';
+	import { actionsProduct } from '$lib/data';
 	import { calDiscount, createBoolArray } from '$lib/utils';
+	import { Eye } from 'lucide-svelte';
 	import type { TProductProps } from '../../../types';
+	import Button from '../ui/button/button.svelte';
 
 	export const product: TProductProps = {
 		id: 1,
@@ -22,8 +25,17 @@
 </script>
 
 <Card.Root class="rounded-2xl">
-	<Card.Content class="p-0">
+	<Card.Content class="relative p-0">
 		<img class="rounded-2xl" src={`/img/product/${0 + 1}.jpg`} alt={`Product ${0 + 1}`} />
+		<div class="absolute bottom-3 right-1/2 translate-x-1/2">
+			<div class="flex items-center gap-3">
+				{#each actionsProduct as item}
+					<Button class="h-9 w-9 rounded-xl p-0" title={item.name} variant="outline-3" size="icon">
+						<svelte:component this={item.icon} class="h-5 w-5" />
+					</Button>
+				{/each}
+			</div>
+		</div>
 	</Card.Content>
 
 	<Card.Footer class="border-t p-5">
