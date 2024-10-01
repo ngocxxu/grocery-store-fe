@@ -19,7 +19,7 @@
 		description:
 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, voluptatum. Vitae dolores alias repellat eligendi, officiis, exercitationem corporis quisquam delectus cum non',
 		sku: 'WH12',
-		status: 'In stock',
+		status: 'Sale',
 		discount: 30
 	};
 
@@ -27,14 +27,18 @@
 </script>
 
 <Card.Root class="rounded-2xl">
-	<Card.Content class="relative p-0">
+	<Card.Content class="relative overflow-hidden rounded-2xl p-0">
 		<div
 			on:mouseenter={() => (isVisible = true)}
 			on:mouseleave={() => (isVisible = false)}
 			role="button"
 			tabindex="0"
 		>
-			<img class="rounded-2xl" src={`/img/product/${0 + 1}.jpg`} alt={`Product ${0 + 1}`} />
+			<img
+				class="rounded-2xl transition-transform duration-300 ease-in-out {isVisible && 'scale-110'}"
+				src={`/img/product/${0 + 1}.jpg`}
+				alt={`Product ${0 + 1}`}
+			/>
 			{#if isVisible}
 				<div class="absolute bottom-3 right-1/2 translate-x-1/2">
 					<div class="flex items-center gap-3">
@@ -50,6 +54,12 @@
 						{/each}
 					</div>
 				</div>
+			{:else}
+				<p
+					class="orientText absolute left-1.5 top-2 text-sm uppercase transition-opacity duration-300 ease-in-out"
+				>
+					{product.status}
+				</p>
 			{/if}
 		</div>
 	</Card.Content>
@@ -77,3 +87,10 @@
 		</div>
 	</Card.Footer>
 </Card.Root>
+
+<style>
+	.orientText {
+		writing-mode: vertical-rl;
+		text-orientation: upright;
+	}
+</style>
