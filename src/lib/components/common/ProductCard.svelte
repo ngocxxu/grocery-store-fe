@@ -3,7 +3,7 @@
 	import * as Card from '$lib/components/ui/card';
 	import { actionsProduct } from '$lib/data';
 	import { calDiscount, createBoolArray } from '$lib/utils';
-	import { Eye } from 'lucide-svelte';
+
 	import type { TProductProps } from '../../../types';
 	import Button from '../ui/button/button.svelte';
 
