@@ -8,7 +8,9 @@
 
 	import Button from '../ui/button/button.svelte';
 	import Input from '../ui/input/input.svelte';
-	import Separator from '../ui/separator/separator.svelte';
+	import CounterNumber from '../product/CounterNumber.svelte';
+
+	let count = 1;
 </script>
 
 <div class="container flex items-center justify-between py-4">
@@ -71,13 +73,14 @@
 								alt={`Product ${0 + 1}`}
 							/>
 							<div>
-								<p>{product.name}</p>
+								<p class="font-medium">{product.name}</p>
 								<p class="font-semibold">
 									${calDiscount(product.price, product.discount)}
 									<span class="text-sm font-light"
 										>x {product.weightOptions[0].weight + product.weightOptions[0].unit}</span
 									>
 								</p>
+								<CounterNumber bind:value={count} />
 							</div>
 						</div>
 
@@ -92,7 +95,7 @@
 				</Sheet.Header>
 
 				<div class="border-t">
-					<div class="flex flex-col gap-2 my-4">
+					<div class="my-4 flex flex-col gap-2">
 						<div class="flex items-center justify-between">
 							<p class="font-medium text-gray-500">Sub-Total :</p>
 							<p>$300.00</p>
