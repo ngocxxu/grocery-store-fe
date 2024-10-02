@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import Star from '$lib/components/common/Star.svelte';
 	import * as Card from '$lib/components/ui/card';
 	import { actionsProduct, product } from '$lib/data';
@@ -57,7 +58,9 @@
 					{/each}
 				</div>
 			</div>
-			<p class="text-sm">{product.name}</p>
+			<button class="text-left text-sm hover:text-secondary" on:click={() => goto('/product/1')}
+				>{product.name}</button
+			>
 			<div class="flex justify-between">
 				<p class="font-semibold">
 					${calDiscount(product.price, product.discount)}
