@@ -1,4 +1,5 @@
 import { Eye, GitCompareArrows, Heart, ShoppingBag } from 'lucide-svelte';
+
 import type { TProductProps } from '../../types';
 
 export const stars = [
@@ -157,19 +158,19 @@ export const vendorData = [
 export const actionsProduct = [
 	{
 		name: 'Wishlist',
-		icon: Heart,
+		icon: Heart
 	},
-  {
+	{
 		name: 'Quick View',
-		icon: Eye,
+		icon: Eye
 	},
 	{
 		name: 'Compare',
-		icon: GitCompareArrows,
+		icon: GitCompareArrows
 	},
 	{
 		name: 'Add To Cart',
-		icon: ShoppingBag,
+		icon: ShoppingBag
 	}
 ];
 
@@ -197,3 +198,11 @@ export const product: TProductProps = {
 	status: 'Sale',
 	discount: 30
 };
+
+export const infoData = [
+	{ label: 'Weight', value: '500 g' },
+	{ label: 'Dimensions', value: '17 × 15 × 3 cm' },
+	{ label: 'Color', value: 'black,yellow,red' },
+	{ label: 'Brand', value: 'Wonder Fort' },
+	{ label: 'Quantity', value: 50 }
+];
