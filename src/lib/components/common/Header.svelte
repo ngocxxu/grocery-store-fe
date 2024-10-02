@@ -6,9 +6,10 @@
 	import { calDiscount } from '$lib/utils';
 	import { LayoutGrid, ShoppingCart, Star, UserRound, X } from 'lucide-svelte';
 
+	import CounterNumber from '../product/CounterNumber.svelte';
 	import Button from '../ui/button/button.svelte';
 	import Input from '../ui/input/input.svelte';
-	import CounterNumber from '../product/CounterNumber.svelte';
+	import ScrollArea from '../ui/scroll-area/scroll-area.svelte';
 
 	let count = 1;
 </script>
@@ -65,32 +66,38 @@
 			<Sheet.Content class="flex flex-col justify-between">
 				<Sheet.Header>
 					<Sheet.Title class="mb-2">My cart</Sheet.Title>
-					<Sheet.Description class="relative">
-						<div class="flex items-center gap-4 rounded-2xl border bg-carousel p-4">
-							<img
-								class="w-20 rounded-2xl border"
-								src={`/img/product/${0 + 1}.jpg`}
-								alt={`Product ${0 + 1}`}
-							/>
-							<div>
-								<p class="font-medium">{product.name}</p>
-								<p class="font-semibold">
-									${calDiscount(product.price, product.discount)}
-									<span class="text-sm font-light"
-										>x {product.weightOptions[0].weight + product.weightOptions[0].unit}</span
-									>
-								</p>
-								<CounterNumber bind:value={count} />
-							</div>
-						</div>
+					<Sheet.Description>
+						<ScrollArea class="h-[75vh]">
+							<div class="flex flex-col gap-3">
+								<div class="relative">
+									<div class="flex items-center gap-4 rounded-2xl border bg-carousel p-4">
+										<img
+											class="w-20 rounded-2xl border"
+											src={`/img/product/${0 + 1}.jpg`}
+											alt={`Product ${0 + 1}`}
+										/>
+										<div>
+											<p class="font-medium">{product.name}</p>
+											<p class="font-semibold">
+												${calDiscount(product.price, product.discount)}
+												<span class="text-sm font-light"
+													>x {product.weightOptions[0].weight + product.weightOptions[0].unit}</span
+												>
+											</p>
+											<CounterNumber bind:value={count} />
+										</div>
+									</div>
 
-						<Button
-							variant="outline-3"
-							size="icon"
-							class="absolute -right-2 -top-2 h-5 w-5 rounded-full bg-primary p-0"
-						>
-							<X class="h-3 w-3" color="white" />
-						</Button>
+									<Button
+										variant="outline-3"
+										size="icon"
+										class="absolute -right-0 -top-0 z-10 h-5 w-5 rounded-full bg-primary p-0"
+									>
+										<X class="h-3 w-3" color="white" />
+									</Button>
+								</div>
+							</div>
+						</ScrollArea>
 					</Sheet.Description>
 				</Sheet.Header>
 
@@ -113,7 +120,9 @@
 					<Sheet.Footer>
 						<Sheet.Close asChild let:builder>
 							<div class="flex w-full items-center justify-between">
-								<Button variant="outline">View Cart</Button>
+								<Button builders={[builder]} variant="outline" on:click={() => goto('/view-cart')}
+									>View Cart</Button
+								>
 								<Button builders={[builder]} type="submit">Checkout</Button>
 							</div>
 						</Sheet.Close>
