@@ -3,7 +3,7 @@
 	import * as Tabs from '$lib/components/ui/tabs';
 	import { charaterProduct, product } from '$lib/data';
 	import { createBoolArray } from '$lib/utils';
-	import { Eye, Heart } from 'lucide-svelte';
+	import { Heart } from 'lucide-svelte';
 
 	import ProductCard from '../common/ProductCard.svelte';
 	import Star from '../common/Star.svelte';
@@ -12,6 +12,7 @@
 	import DetailTab from './DetailTab.svelte';
 	import InfoTab from './InfoTab.svelte';
 	import ReviewsTab from './ReviewsTab.svelte';
+	import ThumbSlider from './ThumbSlider.svelte';
 
 	export const tabProductDetail = [
 		{
@@ -27,9 +28,9 @@
 </script>
 
 <div class="container flex flex-col gap-24">
-	<div>
+	<div class="mt-20">
 		<div class="flex items-start gap-6">
-			<div>img</div>
+			<ThumbSlider />
 
 			<div class="flex flex-col gap-6">
 				<h4 class="text-2xl font-medium">{product.name}</h4>
