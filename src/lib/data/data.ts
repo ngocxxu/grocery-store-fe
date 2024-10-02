@@ -206,3 +206,22 @@ export const infoData = [
 	{ label: 'Brand', value: 'Wonder Fort' },
 	{ label: 'Quantity', value: 50 }
 ];
+
+export const charaterProduct = [
+	{
+		label: 'Closure',
+		value: 'Hook & Loop'
+	},
+	{
+		label: 'Sole',
+		value: 'Polyvinyl Chloride'
+	},
+	{
+		label: 'Width',
+		value: 'Medium'
+	},
+	{
+		label: 'Outer Material',
+		value: 'A-Grade Standard Quality'
+	}
+];
