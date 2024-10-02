@@ -123,7 +123,7 @@
 								<Button builders={[builder]} variant="outline" on:click={() => goto('/view-cart')}
 									>View Cart</Button
 								>
-								<Button builders={[builder]} type="submit">Checkout</Button>
+								<Button builders={[builder]} on:click={() => goto('/checkout')}>Checkout</Button>
 							</div>
 						</Sheet.Close>
 					</Sheet.Footer>
