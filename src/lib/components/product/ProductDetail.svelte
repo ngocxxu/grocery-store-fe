@@ -22,6 +22,8 @@
 		{ label: 'Information', value: 'info', data: InfoTab },
 		{ label: 'Reviews', value: 'reviews', data: ReviewsTab }
 	];
+
+	let weightValue = product.weightOptions[0].weight;
 </script>
 
 <div class="container flex flex-col gap-24">
@@ -69,26 +71,28 @@
 				<div>
 					<h4 class="mb-4 font-semibold">WEIGHT</h4>
 					<div class="flex items-center gap-2">
-						<button class="rounded-xl border bg-secondary px-4 py-2 text-sm text-white">250g</button
-						>
-						<button class="rounded-xl border px-4 py-2 text-sm">500g</button>
+						{#each product.weightOptions as item}
+							<button
+								class="rounded-xl border px-4 py-2 text-sm {weightValue === item.weight &&
+									'bg-secondary text-white'}"
+								on:click={() => (weightValue = item.weight)}>{item.weight + ' ' + item.unit}</button
+							>
+						{/each}
 					</div>
 				</div>
 
 				<div class="flex gap-2">
 					<CounterNumber />
 					<Button class="rounded-xl" variant="secondary">Add to Cart</Button>
+					<Button class="rounded-xl" variant="default">Buy Now</Button>
 					<Button class="rounded-xl border-input p-3 text-gray-500" variant="outline">
 						<Heart class="h-4 w-4" />
-					</Button>
-					<Button class="rounded-xl border-input p-3 text-gray-500" variant="outline">
-						<Eye class="h-4 w-4" />
 					</Button>
 				</div>
 			</div>
 		</div>
 
-		<Tabs.Root class='mt-12' value={tabProductDetail[0].value}>
+		<Tabs.Root class="mt-12" value={tabProductDetail[0].value}>
 			<Tabs.List class="bg-transparent">
 				{#each tabProductDetail as item, i (item.value)}
 					<Tabs.Trigger
