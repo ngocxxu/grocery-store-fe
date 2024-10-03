@@ -3,7 +3,7 @@
 	import * as Carousel from '$lib/components/ui/carousel/index.js';
 	import Autoplay from 'embla-carousel-autoplay';
 
-	const plugin = Autoplay({ delay: 2000, stopOnInteraction: true });
+	const plugin = Autoplay({ delay: 3000, stopOnInteraction: true });
 </script>
 
 <Carousel.Root
