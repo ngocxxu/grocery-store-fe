@@ -182,12 +182,13 @@ export const product: TProductProps = {
 	image: [],
 	weightOptions: [
 		{
+			id: '1',
 			weight: 500,
-			unit: 'g'
-		},
-		{
-			weight: 1,
-			unit: 'kg'
+			unit: {
+				id: '1',
+				name: 'Gram',
+				abbreviation: 'g'
+			}
 		}
 	],
 	type: 'Snacks',

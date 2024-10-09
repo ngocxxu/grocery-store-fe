@@ -67,7 +67,7 @@
 					<span class="ml-1.5 text-sm font-light line-through">${product.price}</span>
 				</p>
 				<p class="text-sm font-light">
-					{product.weightOptions[0].weight + product.weightOptions[0].unit}
+					{product.weightOptions[0].weight + product.weightOptions[0].unit.abbreviation}
 				</p>
 			</div>
 		</div>
