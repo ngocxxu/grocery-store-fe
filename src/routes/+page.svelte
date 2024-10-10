@@ -7,6 +7,14 @@
 	import PosterFood from '$lib/components/home/PosterFood.svelte';
 	import ServiceStore from '$lib/components/home/ServiceStore.svelte';
 	import TopVendor from '$lib/components/home/TopVendor.svelte';
+
+	import type { PageData } from './$types';
+
+	export let data: PageData;
+
+	$: productsAPI = data.productsAPI;
+
+	$: console.log(productsAPI);
 </script>
 
 <div class="flex flex-col gap-24">
