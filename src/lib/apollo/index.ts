@@ -1,7 +1,7 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client/core';
 
 const client = new ApolloClient({
-	uri: 'http://localhost:8080/query',
+	uri: import.meta.env.VITE_GRAPHQL_URL || 'http://localhost:8030/app2/query',
 	cache: new InMemoryCache()
 });
 
